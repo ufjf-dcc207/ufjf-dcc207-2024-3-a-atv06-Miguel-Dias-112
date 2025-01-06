@@ -1,19 +1,21 @@
 import "./Emoji.css"
+import { useState } from "react"
 const EMOJI = new Map<string, string>([
     ["earth", "🌍"],
     ["moon", "🌕"],
     ["sun", "☀️"],
 ])
 export default function Emoji() {
-    let situacao = ""
+    const [situacao, setSituacao] = useState("");
+
     function toEarth() {
-        situacao = "earth"
+        setSituacao("earth")
     }
     function toMoon() {
-        situacao = "moon"
+        setSituacao("moon")
     }
     function toSun() {
-        situacao = "sun"
+        setSituacao("sun")
     }
     
     return (
