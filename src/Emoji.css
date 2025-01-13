@@ -1,16 +1,19 @@
 .planeta{
     font-size: 6em;
-    animation: girar 1s infinite;
 
 }
 
-@keyframes girar{
-    0%{
-        transform: rotateY(0deg);
-
+.emoji{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    .situacao{
+        font-size: 4em;
     }
-   
-    100%{
-        transform: rotateY(360deg);
+    .acoes{
+        display: flex;
+        flex-direction: column;
     }
 }

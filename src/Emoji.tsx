@@ -1,47 +1,56 @@
+import Atributo from "./Atributo";
 import "./Emoji.css"
 import { useState } from "react"
 const EMOJI = new Map<string, string>([
-    ["earth", "🌍"],
-    ["moon", "🌕"],
-    ["sun", "☀️"],
-    ["standby", "🚀"]
+    ["Feliz", "😀"],
+    ["Doente", "🤢"],
+    ["Morto", "💀"],
+    ["standby", '😐 ']
 ])
 export default function Emoji() {
     const [situacao, setSituacao] = useState("standby");
 
-    function toEarth() {
-        setSituacao("earth")
+    function toFeliz() {
+        setSituacao("Feliz")
     }
-    function toMoon() {
-        setSituacao("moon")
+    function toDoente() {
+        setSituacao("Doente")
     }
-    function toSun() {
-        setSituacao("sun")
+    function toMorto() {
+        setSituacao("Morto")
     }
     function travel() {
         
         if (situacao === "standby") {
-            setSituacao("earth")
+            setSituacao("Feliz")
         }
-        else if (situacao === "earth") {
-            setSituacao("moon")
+        else if (situacao === "Feliz") {
+            setSituacao("Doente")
         }
-        else if (situacao === "moon") {
-            setSituacao("sun")
+        else if (situacao === "Doente") {
+            setSituacao("Morto")
         }
-        else if (situacao === "sun") {
-            setSituacao("earth")
+        else if (situacao === "Morto") {
+            setSituacao("Feliz")
         }
     }
     return (
         <div className="emoji">
             <div className="planeta">{EMOJI.get(situacao)||"?"}</div>
-            <div className="acoes">
-                <button onClick={toEarth}>go to Earth</button>
-                <button onClick={toMoon}>go to Moon</button>
-                <button onClick={toSun}>go to Sun</button>
-                <button onClick={travel}>travel</button>
+            <div className="atribuoos"> 
+                <Atributo icone={"❤️"}/>
+                <Atributo icone={"🍔"}/>
+                <Atributo icone={"💦"}/>
+                <Atributo icone={"⚡"}/>
             </div>
+            <div className="acoes">
+                <button onClick={toFeliz}>go to Feliz</button>
+                <button onClick={toDoente}>go to Doente</button>
+                <button onClick={toMorto}>go to Morto</button>
+                <button onClick={travel}>ciclo</button>
+            </div>
+           
+           
         </div>
     )
 }
